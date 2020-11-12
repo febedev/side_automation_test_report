@@ -9,7 +9,6 @@
 1. Write test script
 2. Export to json file
     > collect.json
-
     > environment.json
 
 ## AWS Repository
@@ -28,17 +27,17 @@
     - CodeBuild -> Build daily triggers: `Cron expression 0 1 ? * * *`
 
 ## S3
-- Run source of test script
-    > Update collect.json and environment.json into S3/Bucket/postman/
+- Put the latest collection of Postman to S3 bucket
+    > Bucket path: S3/Bucket/postman/
 - Set up the static website
-    1. Properties > Static website hosting
+    - Properties > Static website hosting
         > index.html
-    2. Permissions > Block public access > Set off
-    3. Permissions > Bucket policy
+    - Permissions > Block public access > Set off
+    - Permissions > Bucket policy
         > policy.json
-    4. Permissions > Cross-origin resource sharing
+    - Permissions > Cross-origin resource sharing
         > cors.json
 - Auto save report after codepipe end
-    > S3/Bucket/postman/postman-report/
+    > Bucket path: S3/Bucket/postman/postman-report/
 
 
