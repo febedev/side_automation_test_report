@@ -5,7 +5,7 @@ phases:
     commands:
       - npm install newman --global
       - npm install newman-reporter-html --global
-      - TIME=$(date +"%Y-%m-%d-%H-%M-%S")
+      - TIME=$(TZ=":Asia/Taipei" date +"%Y-%m-%d-%H-%M-%S")
       - REPOSITORY_NAME="automation-test-report"
       - COLLECTION=$(aws s3 ls ${REPOSITORY_NAME}/postman/ | grep collection | tail -1 | awk '{print $NF}')
       - ENVIRONMENT=$(aws s3 ls ${REPOSITORY_NAME}/postman/ | grep environment | tail -1 | awk '{print $NF}')
